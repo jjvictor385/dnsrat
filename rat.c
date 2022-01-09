@@ -55,7 +55,7 @@ int main(int argc, char **argv) {
 
 	} while (!r->eof);
 
-	printf("%-*s\n", sz, "+ Scan finished.");
+	printf("\r%-*s\n", sz, "+ Scan finished.");
 
 	return 0;
 }
