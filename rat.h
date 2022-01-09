@@ -13,7 +13,7 @@ struct line {
 
 unsigned wincols() {
 
-	struct winsize w;
+	static struct winsize w;
 
 	ioctl(STDOUT_FILENO, TIOCGWINSZ, &w);
 

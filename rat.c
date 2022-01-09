@@ -33,11 +33,12 @@ int main(int argc, char **argv) {
 
 
 	struct line *r;
-	unsigned sz = wincols();
+	unsigned sz;
 
 	do {
 
 		r = nextline(fp, argv[1]);
+		sz = wincols();
 
 		if (r->buf) {
 
@@ -47,6 +48,8 @@ int main(int argc, char **argv) {
 
 			if (gethostbyname(r->buf))
 				printf("\r✓ %-*s\n", sz - 2, r->buf);
+
+			free((void *)r->buf);
 
 		}
 
